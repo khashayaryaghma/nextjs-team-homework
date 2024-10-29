@@ -3,7 +3,6 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
@@ -13,13 +12,16 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Image from "next/image";
 import Link from "next/link";
 
 const drawerWidth = 240;
-const navItems = ["Home", "Questions", "About"];
+const navItems = [
+  { title: "Home", route: "/" },
+  { title: "Questions", route: "/questions" },
+  { title: "About", route: "/about" },
+];
 
 function Header(props) {
   const { window } = props;
@@ -32,14 +34,16 @@ function Header(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Box sx={{ my: 2 }}>
-        <Image src="/logo.png" width={50} height={50} />
+        <Image src="/logo.png" width={50} height={50} alt="logo" priority />
       </Box>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.title} disablePadding>
             <ListItemButton sx={{ textAlign: "center" }}>
-              <ListItemText primary={item} />
+              <Link href={item.route} style={{ color: "#333333" }}>
+                {item.title}
+              </Link>
             </ListItemButton>
           </ListItem>
         ))}
@@ -58,13 +62,15 @@ function Header(props) {
           </IconButton>
           <Box component="div" sx={{ mr: 2, display: { xs: "none", sm: "block" } }}>
             <Link href={"/"}>
-              <Image src="/logo.png" width={50} height={50} />
+              <Image src="/logo.png" width={50} height={50} alt="logo" priority />
             </Link>
           </Box>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }}>
-                {item}
+              <Button key={item.title}>
+                <Link href={item.route} style={{ color: "#fff" }}>
+                  {item.title}
+                </Link>
               </Button>
             ))}
           </Box>
