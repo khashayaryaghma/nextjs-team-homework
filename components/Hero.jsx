@@ -23,7 +23,7 @@ export const Hero = () => {
             Looking for answers? You've come to the right place! Our community is here to help with reliable, insightful answers to all your questions. Whether
             you're here to learn, share your expertise, or just browse, we’re excited to have you.
           </Typography>
-          <Link href={"/questions"} target="_blank">
+          <Link href={"/questions"}>
             <Button variant="contained">Go to Questions</Button>
           </Link>
         </Box>
