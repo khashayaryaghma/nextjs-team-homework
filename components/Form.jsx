@@ -26,7 +26,7 @@ function Form() {
   }
   return (
     <Container>
-      <Stack alignItems="center" component="section">
+      <Stack alignItems="center" component="section" mb={20}>
         <Typography variant="h3" component="h2" textAlign="center" mb="3rem">
           Ask your question
         </Typography>
