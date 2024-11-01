@@ -31,7 +31,7 @@ function Questions({ data }) {
           size="small"
         />
       </Stack>
-      <Stack gap="2rem">
+      <Stack gap="2rem" mb={15}>
         {data
           ?.filter((item) => item.title.toLowerCase().includes(inputValue.toLowerCase()))
           ?.map((el) => {
