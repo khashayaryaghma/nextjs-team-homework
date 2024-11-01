@@ -5,7 +5,10 @@ export const data = [
     description: "what is js?",
     createdTime: "11/1/2024, 5:52:14 PM",
     answers: [
-      { ansText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero cupiditate nobis voluptas commodi ex porro corrupti officia." },
+      {
+        ansText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero cupiditate nobis voluptas commodi ex porro corrupti officia.",
+        id: "dfh5eh4",
+      },
     ],
   },
   {
@@ -14,7 +17,10 @@ export const data = [
     description: "What is HTML?",
     createdTime: "10/24/2024, 2:25:34 PM",
     answers: [
-      { ansText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero cupiditate nobis voluptas commodi ex porro corrupti officia." },
+      {
+        ansText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero cupiditate nobis voluptas commodi ex porro corrupti officia.",
+        id: "h54h45h",
+      },
     ],
   },
   {
@@ -23,7 +29,10 @@ export const data = [
     description: "What is CSS?",
     createdTime: "11/1/2024, 3:17:12 PM",
     answers: [
-      { ansText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero cupiditate nobis voluptas commodi ex porro corrupti officia." },
+      {
+        ansText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero cupiditate nobis voluptas commodi ex porro corrupti officia.",
+        id: "h45h5445",
+      },
     ],
   },
   {
@@ -32,7 +41,10 @@ export const data = [
     description: "what is React?",
     createdTime: "10/15/2024, 4:34:54 PM",
     answers: [
-      { ansText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero cupiditate nobis voluptas commodi ex porro corrupti officia." },
+      {
+        ansText: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam libero cupiditate nobis voluptas commodi ex porro corrupti officia.",
+        id: "5h4h45y4h",
+      },
     ],
   },
 ];
