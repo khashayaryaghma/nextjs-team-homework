@@ -11,7 +11,7 @@ function Form() {
     control,
     handleSubmit,
     reset,
-    formState: { isSubmitting, isValid },
+    formState: { isSubmitting},
   } = useForm({
     defaultValues: {
       title: "",
@@ -43,7 +43,7 @@ function Form() {
             control={control}
             render={({ field }) => <TextField disabled={isSubmitting} variant="filled" {...field} label={"Description"} multiline rows={3} />}
           />
-          <Button sx={{ height: "2.5rem" }} disabled={isSubmitting || !isValid} type="button" onClick={() => setOpenDialog(true)} variant="contained">
+          <Button sx={{ height: "2.5rem" }} disabled={isSubmitting} type="button" onClick={() => setOpenDialog(true)} variant="contained">
             {isSubmitting ? <CircularProgress color="primary" size={16} /> : "Submit"}
           </Button>
         </Stack>

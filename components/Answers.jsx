@@ -4,7 +4,7 @@ import AnsForm from "./AnsForm";
 function Answers({ data }) {
   return (
     <>
-      <Typography variant="h3" component="h1" mb={3}>
+      <Typography variant="h3" component="h1" mb={3} mt="7rem">
         {data.title}
       </Typography>
       <Typography gutterBottom>{data.description}</Typography>
@@ -22,7 +22,7 @@ function Answers({ data }) {
           </Box>
         ))}
       </Stack>
-      <AnsForm />
+      <AnsForm id={data.id} />
     </>
   );
 }

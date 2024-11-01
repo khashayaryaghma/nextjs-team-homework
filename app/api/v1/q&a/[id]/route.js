@@ -1,3 +1,4 @@
+import { v4 } from "uuid";
 import { data } from "../route";
 
 export async function GET(req, { params }) {
@@ -8,13 +9,12 @@ export async function GET(req, { params }) {
   return Response.json(obj);
 }
 
-// export async function PATCH(req, { params }) {
-//   const body = await req.json();
-//   const { title } = body;
-//   const index = data.findIndex((user) => user.id === params.id);
-//   data[index].title = title;
-//   return Response.json(data[index]);
-// }
+export async function PATCH(req, { params }) {
+  const body = await req.json();
+  const index = data.findIndex((user) => user.id === params.id);
+  data[index].answers.push({ ...body, id: v4() });
+  return Response.json(data[index]);
+}
 
 export async function DELETE(req, { params }) {
   const index = data.findIndex((user) => user.id === params.id);
