@@ -1,12 +1,12 @@
 import { data } from "../route";
 
-// export async function GET(req, { params }) {
-//   const obj = data.find((item) => {
-//     return params.id === item.id;
-//   });
+export async function GET(req, { params }) {
+  const obj = data.find((item) => {
+    return params.id === item.id;
+  });
 
-//   return Response.json(obj);
-// }
+  return Response.json(obj);
+}
 
 // export async function PATCH(req, { params }) {
 //   const body = await req.json();

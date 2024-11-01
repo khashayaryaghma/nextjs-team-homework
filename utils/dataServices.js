@@ -18,3 +18,9 @@ export async function deleteQues(id) {
   await fetch(`${url}/${id}`, { method: "DELETE" });
   revalidateTag("ques");
 }
+
+export async function getQues(id) {
+  const res = await fetch(`${url}/${id}`);
+  const data = await res.json();
+  return data;
+}
