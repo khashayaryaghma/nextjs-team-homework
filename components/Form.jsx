@@ -1,4 +1,5 @@
 "use client";
+import { postQues } from "@/utils/dataServices";
 import { Button, CircularProgress, Container, Dialog, DialogActions, DialogTitle, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -20,8 +21,8 @@ function Form() {
     },
   });
 
-  function onSubmit(data) {
-    console.log(data);
+  async function onSubmit(data) {
+    await postQues(data);
     reset();
   }
   return (

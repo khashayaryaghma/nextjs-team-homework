@@ -46,9 +46,11 @@ function Questions({ data }) {
                     ":hover": { transform: "scale(1.05)" },
                   }}
                 >
-                  <Stack direction="row" justifyContent="space-between">
-                    <Typography variant="h6">{el.title}</Typography>
-                    <Typography>{el.createdTime}</Typography>
+                  <Stack direction="row" justifyContent="space-between" alignItems="center">
+                    <Typography variant="h6" gutterBottom>
+                      {el.title}
+                    </Typography>
+                    <Typography variant="subtitle2">{el.createdTime}</Typography>
                   </Stack>
                   <Typography variant="subtitle2">{el.description.length > 30 ? el.description.slice(0, 30) + "..." : el.description}</Typography>
                 </Stack>
