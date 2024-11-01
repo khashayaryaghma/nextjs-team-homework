@@ -1,5 +1,5 @@
 "use client";
-import { Box, IconButton, InputAdornment, Stack, TextField, Typography } from "@mui/material";
+import { InputAdornment, Stack, TextField, Typography } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
