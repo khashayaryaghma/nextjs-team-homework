@@ -21,7 +21,7 @@ export async function deleteQues(id) {
 }
 
 export async function getQues(id) {
-  const res = await fetch(`${url}/${id}`, { next: { tags: ["ans"] } });
+  const res = await fetch(`${url}/${id}`, { next: { tags: ["ans", "ques"] } });
   const data = await res.json();
   return data;
 }
