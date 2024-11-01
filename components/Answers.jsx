@@ -1,4 +1,5 @@
 import { Box, Divider, Stack, Typography } from "@mui/material";
+import AnsForm from "./AnsForm";
 
 function Answers({ data }) {
   return (
@@ -8,6 +9,9 @@ function Answers({ data }) {
       </Typography>
       <Typography gutterBottom>{data.description}</Typography>
       <Divider />
+      <Typography variant="h5" my={5}>
+        Answers:
+      </Typography>
       <Stack gap={"2rem"} mt={5}>
         {data?.answers?.map((el) => (
           <Box key={el.id}>
@@ -18,6 +22,7 @@ function Answers({ data }) {
           </Box>
         ))}
       </Stack>
+      <AnsForm />
     </>
   );
 }
