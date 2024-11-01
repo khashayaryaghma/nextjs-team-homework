@@ -13,3 +13,8 @@ export async function postQues(ques) {
   await fetch(url, { method: "POST", body: JSON.stringify(ques) });
   revalidateTag("ques");
 }
+
+export async function deleteQues(id) {
+  await fetch(`${url}/${id}`, { method: "DELETE" });
+  revalidateTag("ques");
+}
