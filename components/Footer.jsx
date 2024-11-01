@@ -1,26 +1,20 @@
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import Link from "next/link";
-import LanguageIcon from "@mui/icons-material/Language";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
 function Footer() {
   return (
-    <Box sx={{ backgroundColor: "primary.main",paddingY:"3rem" }} component="footer">
+    <Box sx={{ backgroundColor: "primary.main", paddingY: "3rem" }} component="footer">
       <Container>
-        <Stack direction="row" gap={"1rem"} justifyContent="center">
-          <Link href={"#"} style={{color:"#fafafa"}}>
-            <LanguageIcon fontSize="large"/>
-          </Link>
-          <Link href={"#"} style={{color:"#fafafa"}}>
-            <LinkedInIcon fontSize="large"/>
-          </Link>
-          <Link href={"#"} style={{color:"#fafafa"}}>
-            <InstagramIcon fontSize="large"/>
-          </Link>
-          <Link href={"#"} style={{color:"#fafafa"}}>
-            <GitHubIcon fontSize="large"/>
+        <Stack gap="1rem" alignItems="center">
+          <Typography variant="h6" color="#fff">More projects I’ve worked on:</Typography>
+          <Link
+            href="https://github.com/khashayaryaghma"
+            target="_blank"
+            style={{ color: "#fff", display: "flex", flexDirection: "row", alignItems: "center", gap: "0.75rem" }}
+          >
+            <GitHubIcon fontSize="large" />
+            <Typography>@khashayaryaghma on github</Typography>
           </Link>
         </Stack>
       </Container>
