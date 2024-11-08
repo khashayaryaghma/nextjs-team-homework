@@ -15,6 +15,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Button from "@mui/material/Button";
 import Image from "next/image";
 import Link from "next/link";
+import { DarkModeBtn } from "./DarkMode";
 
 const drawerWidth = 240;
 const navItems = [
@@ -47,6 +48,7 @@ function Header(props) {
             </ListItemButton>
           </ListItem>
         ))}
+        <DarkModeBtn text />
       </List>
     </Box>
   );
@@ -73,6 +75,9 @@ function Header(props) {
                 </Link>
               </Button>
             ))}
+          </Box>
+          <Box sx={{ flexGrow: "1", textAlign: "right", display: { xs: "none", sm: "block" } }}>
+            <DarkModeBtn />
           </Box>
         </Toolbar>
       </AppBar>
