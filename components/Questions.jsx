@@ -1,13 +1,15 @@
 "use client";
-import { InputAdornment, Stack, TextField, Typography } from "@mui/material";
+import { Box, InputAdornment, Stack, TextField, Typography } from "@mui/material";
 import Link from "next/link";
 import { useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { deleteQues } from "@/utils/dataServices";
+import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 
 function Questions({ data }) {
   const [inputValue, setInputValue] = useState("");
+  const [qData, setQData] = useState(data);
 
   function handleChange(e) {
     setInputValue(e.target.value);
@@ -15,15 +17,14 @@ function Questions({ data }) {
   async function handleRemove(id) {
     await deleteQues(id);
   }
-
   return (
     <Stack>
-      <Stack justifyContent="center" direction="row">
+      <Stack justifyContent="center" alignItems="center" gap={4} mb={"4rem"}>
         <TextField
           value={inputValue}
           onChange={handleChange}
           placeholder="Search"
-          sx={{ marginBottom: "3rem", width: "600px" }}
+          sx={{ width: "600px" }}
           slotProps={{
             input: {
               startAdornment: (
@@ -35,9 +36,30 @@ function Questions({ data }) {
           }}
           size="small"
         />
+        <Stack direction="row" gap="2rem">
+          Filter By :
+          <Box
+            onClick={() => {
+              setQData([...qData.sort((a, b) => Date.parse(b.createdTime) - Date.parse(a.createdTime))]);
+            }}
+          >
+            <Typography sx={{ display: "flex", alignItems: "center", gap: "5px", cursor: "pointer" }}>
+              <ArrowDownwardIcon fontSize="small" /> Newer
+            </Typography>
+          </Box>
+          <Box
+            onClick={() => {
+              setQData([...qData.sort((a, b) => Date.parse(a.createdTime) - Date.parse(b.createdTime))]);
+            }}
+          >
+            <Typography sx={{ display: "flex", alignItems: "center", gap: "5px", cursor: "pointer" }}>
+              <ArrowDownwardIcon fontSize="small" /> Older
+            </Typography>
+          </Box>
+        </Stack>
       </Stack>
       <Stack gap="2rem" mb={15}>
-        {data
+        {qData
           ?.filter((item) => item.title.toLowerCase().includes(inputValue.toLowerCase()))
           ?.map((el) => {
             return (
