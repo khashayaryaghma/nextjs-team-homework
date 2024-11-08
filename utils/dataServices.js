@@ -31,3 +31,12 @@ export async function postAns(ques, id) {
 
   revalidateTag("ans");
 }
+
+export async function delAns(id, ansId) {
+  await fetch(`${url}/${id}?delA=${ansId}`, { method: "DELETE" });
+  revalidateTag("ans");
+}
+export async function editAns(body, id, ansId) {
+  await fetch(`${url}/${id}?editA=${ansId}`, { method: "PATCH", body: JSON.stringify({ text: body }) });
+  revalidateTag("ans");
+}
