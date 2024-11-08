@@ -53,12 +53,16 @@ function Questions({ data }) {
                     }}
                   >
                     <Stack direction="row" justifyContent="space-between" alignItems="center">
-                      <Typography variant="h6" gutterBottom>
+                      <Typography variant="h6" color="text.primary" gutterBottom>
                         {el.title}
                       </Typography>
-                      <Typography variant="subtitle2">{el.createdTime}</Typography>
+                      <Typography variant="subtitle2" color="text.primary">
+                        {el.createdTime}
+                      </Typography>
                     </Stack>
-                    <Typography variant="subtitle2">{el.description.length > 30 ? el.description.slice(0, 30) + "..." : el.description}</Typography>
+                    <Typography variant="subtitle2" color="text.primary">
+                      {el.description.length > 30 ? el.description.slice(0, 30) + "..." : el.description}
+                    </Typography>
                   </Stack>
                 </Link>
                 <Stack
